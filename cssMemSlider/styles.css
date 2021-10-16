@@ -12,7 +12,7 @@ body {
     height: 100vh;
     font-family: 'Merriweather Sans', sans-serif;
     overscroll-behavior: none;
-    font-size: 16px;
+    font-size: 10px;
     /* line-height: 1em; */
 }  
 
@@ -23,36 +23,135 @@ img {
 body {
     display: flex;
     align-items: center;
-    background-color: rgb(162, 156, 167);
+    background: linear-gradient(to top, rgb(128, 127, 139), rgb(223, 221, 226)) ;
+    color: rgb(240, 228, 207);
+    font-weight: 400;
+    letter-spacing: 0.12rem;
 }
 
 .wrapper {
     margin: 0 auto;
-    background-color: #fff;
-    width: 40%;
+    /* background-color: #fff; */
+    width: 80rem;
+    max-width: 80%;
 }
 
 .slider {
     width: 100%;
-    /* overflow: hidden; */
+    /* margin: 2rem; */
+    overflow: hidden;
     display: flex;
+    /* box-shadow: 0 0 1rem rgb(85, 83, 83); */
+   outline: 0.3rem solid rgb(204, 200, 200);
+    /* border-radius: 0.5rem; */
 }
 
 .slide {
     flex-shrink: 0;
     width: 100%;
     padding-top: 100%;
+    order: 1;
     background-repeat: no-repeat;
     background-size: contain;
+    opacity: 0;
+    transform: scale(1.02);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, order 0.3s ease-in-out;
 
+}
+
+.bottom-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.text {
+    flex-basis: 70%;
+    display: flex;
+    overflow: hidden;
+}
+
+.text__item {
+    padding-left: 1rem;
+    flex-basis: 100%;
+    flex-shrink: 0;
+    order: 1;
+    opacity: 0;
+    transform: scale(1.02);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, order 0.3s ease-in-out;
+}
+
+.controls {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+input {
+    display: none;
 }
 
 p {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .slide1 { background-image: url(./img/Klimt-Adele_Bloch-Bauer_I_cat-w.jpg); }
-
 .slide2 { background-image: url(./img/Caillebotte-Paris-Street-Rainy-Day-cat-w-2.jpg); }
+.slide3 { background-image: url(./img/Picasso_Les-Demoiselles-dAvignon-cat.jpg); }
+.slide4 { background-image: url(./img/Van_Gogh_-_Sunflowers-cat-w.jpg); }
+.slide5 { background-image: url(./img/Velazquez-Meninas-cat-det.jpg); }
+
+label {
+	cursor: pointer;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 4rem;
+	width: 4rem;
+	/* border-radius: 50%; */
+}
+
+label:hover .fake-input{
+    background-color: rgb(104, 125, 172);
+}
+
+.fake-input {
+    width: 2em;
+    height: 2em;
+    border: 2px solid #ddd;
+    background: transparent;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    
+}
+
+
+#slide1:checked ~ .bottom-container .fake-input1,
+#slide2:checked ~ .bottom-container .fake-input2,
+#slide3:checked ~ .bottom-container .fake-input3,
+#slide4:checked ~ .bottom-container .fake-input4,
+#slide5:checked ~ .bottom-container .fake-input5 {
+    transform: scale(1.3);
+	background: #ddd;
+}
+
+#slide1:checked ~ .slider > .slide1, 
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    opacity: 1;
+    transform: scale(1);
+    order: 0;
+}
+
+#slide1:checked ~ .bottom-container .text1,
+#slide2:checked ~ .bottom-container .text2 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
 
 
