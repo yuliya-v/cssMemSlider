@@ -25,7 +25,6 @@ body {
     background: linear-gradient(to top, #e1dff1, #e2e2eb 50%, #fff);
     color: #38332e;
     font-weight: 200;
-    letter-spacing: 0.1rem;
 }
 
 .wrapper {
@@ -88,7 +87,7 @@ body {
 
 .text__item {
     align-self: center;
-    padding-left: 1rem;
+    padding-left: 2rem;
     flex-basis: 100%;
     flex-shrink: 0;
     order: 1;
@@ -110,6 +109,7 @@ input {
 
 p {
     font-size: 2.5rem;
+    letter-spacing: 0.07em;
 }
 
 .slide1 { background-image: url(./img/Klimt_-_The_Kiss-cat-w.jpg); }
@@ -186,6 +186,10 @@ label:active .fake-input {
     .text {
         flex-basis: 100%;
         margin-bottom: 0.5rem;
+    }
+
+    .text__item {
+        padding-left: 0;
     }
 
     p {
