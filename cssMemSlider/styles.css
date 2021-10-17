@@ -6,18 +6,17 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 10px;
+}
+
 html, 
 body {
     width: 100vw;
     min-height: 100vh;
     font-family: 'Merriweather Sans', sans-serif;
-    overscroll-behavior: none;
-    font-size: 10px;
+    overscroll-behavior: none; 
 }  
-
-img {
-    display: block;
-}
 
 body {
     display: flex;
@@ -214,7 +213,7 @@ label:active .fake-input {
 
 @media screen and (max-width: 500px) {
     .bottom-container {
-       margin-top: 2em;
+       margin-top: 1.5em;
     }
 
     p {
