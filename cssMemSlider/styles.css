@@ -44,6 +44,12 @@ body {
     } 
 }
 
+@media screen and (max-width: 678px) {
+    .wrapper {
+        padding-bottom: 2em;
+    } 
+}
+
 @media screen and (max-width: 500px) {
     .wrapper {
         padding: 1em 1em 2em 1em;
@@ -122,14 +128,14 @@ label {
 }
 
 label:hover .fake-input{
-    background-color: rgb(224, 218, 230);
+    background-color: #e0dae6;
 }
 
 .fake-input {
     width: 1.7rem;
     height: 1.7rem;
-    border: 0.1rem solid rgb(100, 97, 121);
-    background: rgb(255, 255, 255);
+    border: 0.1rem solid #646179;
+    background: #ffffff;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
     border-radius: 50%;
@@ -174,12 +180,12 @@ label:active .fake-input {
     .bottom-container {
        flex-wrap: wrap;
        justify-content: center;
-       margin-top: 2em;
+       margin-top: 2.5em;
     }
     
     .text {
         flex-basis: 100%;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.5rem;
     }
 
     p {
@@ -199,6 +205,16 @@ label:active .fake-input {
     .fake-input {
         height: 1.3rem;
         width: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bottom-container {
+       margin-top: 2em;
+    }
+
+    p {
+        font-size: 1.8em;
     }
 }
 
