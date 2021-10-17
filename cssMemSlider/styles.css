@@ -1,0 +1,224 @@
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+html, 
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Merriweather Sans', sans-serif;
+    overscroll-behavior: none; 
+}  
+
+body {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, #e1dff1, #e2e2eb 50%, #fff);
+    color: #38332e;
+    font-weight: 200;
+}
+
+.wrapper {
+    margin: 2em auto;
+    background-color: #ffffff;
+    width: 85rem;
+    max-width: 92%;
+    box-shadow: 0 0 1.2rem #b6afc0;
+    padding: 1.5em;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1440px) {
+    .wrapper {
+        width: 67rem;
+    } 
+}
+
+@media screen and (max-width: 678px) {
+    .wrapper {
+        padding-bottom: 2.5em;
+    } 
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        padding: 1em 1em 2em 1em;
+    } 
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    padding-top: 100%;
+    order: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transform: scale(1.02);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, order 0.3s ease-in-out;
+}
+
+.bottom-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.text {
+    flex-basis: 70%;
+    display: flex;
+    overflow: hidden;
+}
+
+.text__item {
+    align-self: center;
+    padding-left: 2rem;
+    flex-basis: 100%;
+    flex-shrink: 0;
+    order: 1;
+    opacity: 0;
+    transform: scale(1.02);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, order 0.3s ease-in-out;
+}
+
+.controls {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    display: none;
+}
+
+p {
+    font-size: 2.5rem;
+    letter-spacing: 0.07em;
+}
+
+.slide1 { background-image: url(./img/Klimt_-_The_Kiss-cat-w.jpg); }
+.slide2 { background-image: url(./img/Caillebotte-Paris-Street-Rainy-Day-cat-w-2.jpg); }
+.slide3 { background-image: url(./img/Picasso_Les-Demoiselles-dAvignon-cat.jpg); }
+.slide4 { background-image: url(./img/Van_Gogh_-_Sunflowers-cat-w.jpg); }
+.slide5 { background-image: url(./img/Velazquez-Meninas-cat-w.jpg); }
+
+label {
+	cursor: pointer;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 3rem;
+	width: 3rem;
+}
+
+label:hover .fake-input{
+    background-color: #e0dae6;
+}
+
+.fake-input {
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 0.1rem solid #646179;
+    background: #ffffff;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    
+}
+
+label:active .fake-input {
+    transform: scale(0.85);
+}
+
+#slide1:checked ~ .bottom-container .fake-input1,
+#slide2:checked ~ .bottom-container .fake-input2,
+#slide3:checked ~ .bottom-container .fake-input3,
+#slide4:checked ~ .bottom-container .fake-input4,
+#slide5:checked ~ .bottom-container .fake-input5 {
+    transform: scale(1.2);
+	background: #685a81;
+    border: 0.2rem solid #685a81;
+}
+
+#slide1:checked ~ .slider > .slide1, 
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    opacity: 1;
+    transform: scale(1);
+    order: 0;
+}
+
+#slide1:checked ~ .bottom-container .text1,
+#slide2:checked ~ .bottom-container .text2,
+#slide3:checked ~ .bottom-container .text3,
+#slide4:checked ~ .bottom-container .text4,
+#slide5:checked ~ .bottom-container .text5 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media screen and (max-width: 678px) {
+    .bottom-container {
+       flex-wrap: wrap;
+       justify-content: center;
+       margin-top: 2.5em;
+    }
+    
+    .text {
+        flex-basis: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .text__item {
+        padding-left: 0;
+    }
+
+    p {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .controls {
+        flex-basis: 100%;
+    }
+
+    label {
+        height: 2rem;
+	    width: 3rem;
+    }
+
+    .fake-input {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bottom-container {
+       margin-top: 1.5em;
+    }
+
+    p {
+        font-size: 1.8em;
+    }
+}
+
+
