@@ -23,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     background: linear-gradient(to top, #e1dff1, #e2e2eb 50%, #fff);
-    color: rgb(56, 51, 46);
+    color: #38332e;
     font-weight: 200;
     letter-spacing: 0.1rem;
 }
@@ -32,7 +32,7 @@ body {
     margin: 2em auto;
     background-color: #ffffff;
     width: 80rem;
-    max-width: 90%;
+    max-width: 92%;
     box-shadow: 0 0 1.2rem #b6afc0;
     padding: 1.5em;
     overflow: hidden;
@@ -41,6 +41,12 @@ body {
 @media screen and (max-width: 1440px) {
     .wrapper {
         width: 67rem;
+    } 
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        padding: 1em 1em 2em 1em;
     } 
 }
 
@@ -140,8 +146,8 @@ label:active .fake-input {
 #slide4:checked ~ .bottom-container .fake-input4,
 #slide5:checked ~ .bottom-container .fake-input5 {
     transform: scale(1.2);
-	background: rgb(104, 90, 129);
-    border: 2px solid rgb(104, 90, 129);
+	background: #685a81;
+    border: 0.2rem solid #685a81;
 }
 
 #slide1:checked ~ .slider > .slide1, 
@@ -168,6 +174,7 @@ label:active .fake-input {
     .bottom-container {
        flex-wrap: wrap;
        justify-content: center;
+       margin-top: 2em;
     }
     
     .text {
@@ -186,7 +193,7 @@ label:active .fake-input {
 
     label {
         height: 2rem;
-	    width: 2rem;
+	    width: 3rem;
     }
 
     .fake-input {
